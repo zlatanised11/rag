@@ -10,6 +10,7 @@ from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_community.vectorstores import FAISS
 from openai import OpenAI
+import streamlit as st
 
 os.environ["OPENAI_API_KEY"] = st.secrets["api"]
 client = OpenAI()
