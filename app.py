@@ -4,7 +4,7 @@ from RAGChat import RAGChat  # Assuming RAGChat is defined in a file named RAGCh
 
 # Initialize RAGChat once and store it in session state
 if "rag_chat" not in st.session_state:
-    st.session_state.rag_chat = RAGChat(markdown_directory=".")
+    st.session_state.rag_chat = RAGChat(markdown_directory="./")
 
 rag_chat = st.session_state.rag_chat
 
