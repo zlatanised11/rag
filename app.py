@@ -1,4 +1,4 @@
-import RAGChat as st
+import streamlit as st
 import time
 from RAGChat import RAGChat  # Assuming RAGChat is defined in a file named RAGChat.py
 
