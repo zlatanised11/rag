@@ -12,7 +12,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_community.vectorstores import FAISS
 
 class RAGChat:
-    def __init__(self, markdown_directory='.'):  # Default to current directory
+    def __init__(self, markdown_directory='./'):  # Default to current directory
         os.environ["OPENAI_API_KEY"] = st.secrets["api"]
         self.markdown_directory = markdown_directory
         self.vectorstore_path = os.path.join(self.markdown_directory, "vectorstore.pkl")
