@@ -1,6 +1,6 @@
-import RAGChat as st
+import streamlit as st
+from RAGChat import RAGChat
 import time
-from RAGChat import RAGChat  # Assuming RAGChat is defined in a file named RAGChat.py
 
 # Initialize the RAGChat instance
 rag_chat = RAGChat()
