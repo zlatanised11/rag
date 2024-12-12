@@ -1,5 +1,3 @@
-%%writefile RAGChat.py
-
 import os
 import pickle
 from langchain.docstore.document import Document
