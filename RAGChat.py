@@ -11,7 +11,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_community.vectorstores import FAISS
 from openai import OpenAI
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = os.getenv("API")
 
 client = OpenAI()
 
