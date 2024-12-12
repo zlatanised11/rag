@@ -2,8 +2,11 @@ import streamlit as st
 import time
 from RAGChat import RAGChat  # Assuming RAGChat is defined in a file named RAGChat.py
 
-# Initialize the RAGChat instance
-rag_chat = RAGChat()
+# Initialize RAGChat once and store it in session state
+if "rag_chat" not in st.session_state:
+    st.session_state.rag_chat = RAGChat(markdown_directory=".")
+
+rag_chat = st.session_state.rag_chat
 
 st.title("History of Massachusetts Q&A Bot")
 
@@ -33,12 +36,12 @@ if user_input := st.chat_input("What's on your mind?"):
         response_placeholder = st.empty()
         response_text = ""
         try:
-            for word in rag_chat.get_answer(user_input).split():
-                response_text += word + " "
-                response_placeholder.markdown(response_text)
-                time.sleep(0.05)  # Simulate typing
+            # Get the answer from RAGChat
+            response_text = rag_chat.get_answer(user_input)
+            response_placeholder.markdown(response_text)
         except Exception as e:
             response_text = f"Error: {str(e)}"
             response_placeholder.markdown(response_text)
 
         st.session_state.conversation.append({"sender": "assistant", "text": response_text})
+
