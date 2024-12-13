@@ -45,6 +45,22 @@ The **History of Massachusetts Q&A Bot** is a Retrieval-Augmented Generation (RA
    mkdir -p ~/.streamlit
    echo "[secrets]\napi='<YOUR_API_KEY>'" > ~/.streamlit/secrets.toml
    ```
+4. **Run the Wiki Scraper Script**:
+   Fetch, process, and save Wikipedia content as CSV files
+   ```bash
+   python Wiki_Scraper.py
+   ```
+5. **Generate Markdown Files**:
+   Convert the CSV files into a single Markdown file for easy sharing or documentation
+   ```bash
+   python markdown.py
+   ```
+6. **Run Streamlit**:
+   Host the application on your local network
+   ```bash
+   streamlit run app.py
+   ```
+   
 ## Project Tree
    ```
 📦 
