@@ -49,7 +49,6 @@ The **History of Massachusetts Q&A Bot** is a Retrieval-Augmented Generation (RA
 ## Usage
 
 ### Data Preparation
-# Data Preparation Process
 
 This script prepares and processes data from multiple Wikipedia pages into structured formats for further analysis and documentation. The following steps outline the process:
 
