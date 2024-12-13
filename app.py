@@ -2,6 +2,11 @@ import streamlit as st
 import time
 from RAGChat import RAGChat  # Assuming RAGChat is defined in a file named RAGChat.py
 
+st.set_page_config(
+    page_title="Mass History RAG Bot",  # Title of the tab
+    page_icon="📖",  # Emoji or path to favicon image
+)
+
 # Initialize RAGChat once and store it in session state
 if "rag_chat" not in st.session_state:
     st.session_state.rag_chat = RAGChat(markdown_directory="./")
