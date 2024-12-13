@@ -8,6 +8,7 @@ if "rag_chat" not in st.session_state:
 
 rag_chat = st.session_state.rag_chat
 
+st.image("logo.png", width=150)
 st.title("History of Massachusetts Q&A Bot")
 
 # Initialize session state for conversation history
