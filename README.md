@@ -48,11 +48,32 @@ The **History of Massachusetts Q&A Bot** is a Retrieval-Augmented Generation (RA
 ## Usage
 
 ### Data Preparation
-1. **Scrape and Process Data**:
-   Use `Wiki_Scraper.py` to scrape relevant Wikipedia pages and save the data in CSV and Markdown formats:
-   ```bash
-   python Wiki_Scraper.py
-   ```
+This script prepares and processes data from multiple Wikipedia pages into structured formats for further analysis and documentation. The following steps outline the process:
+
+1. Setup and Initialization
+Directory Creation: A directory named raw_data is created if it does not already exist. This directory will store individual CSV files generated for each Wikipedia page.
+Wikipedia API Initialization: The wikipediaapi library is initialized for the English Wikipedia with a custom user-agent (RAG 2 Riches) to ensure smooth interaction with the API.
+2. Fetching and Processing Wikipedia Data
+Page Retrieval: The script uses the wikipediaapi library to fetch data for a list of specified Wikipedia pages.
+Exclusion of Unwanted Sections: Sections such as See also, References, Bibliography, External links, Explanatory notes, and Further reading are excluded to focus on relevant content.
+Recursive Section Parsing: A recursive function processes each section and its subsections to extract meaningful text. Full section titles are generated to maintain context.
+Saving as CSV: The extracted data for each page is saved as a CSV file in the raw_data folder. Each CSV file includes two columns: section (the section title) and text (the content).
+3. Combining Data
+Loading Individual CSV Files: All CSV files in the raw_data folder are loaded into separate pandas DataFrames.
+Combining DataFrames: These DataFrames are concatenated into a single DataFrame containing all the sections and text from the processed Wikipedia pages.
+Saving Combined Data: The combined DataFrame is saved as a single CSV file named combined_data.csv.
+4. Markdown Conversion
+CSV to Markdown Table: The combined CSV file (combined_data.csv) is converted into a Markdown table using the pandas library. The Markdown table is saved as combined_data.md.
+CSV to Detailed Markdown Document:
+Each CSV file is individually processed to create a detailed Markdown file.
+The Markdown file includes:
+A main heading for each Wikipedia page (based on the CSV file name).
+Subheadings for each section title.
+Corresponding text content under each section.
+The final Markdown document (output.md) is saved in the raw_data folder.
+5. Error Handling
+The script checks if each Wikipedia page exists. If not, an error message is displayed, and the page is skipped.
+During Markdown conversion, the script ensures that required columns (section and text) exist in each CSV file, displaying warnings for missing columns.
 
 ### Running the Application
 1. **Start the Streamlit Interface**:
