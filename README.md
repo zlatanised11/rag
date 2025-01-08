@@ -11,6 +11,30 @@ The **History of Massachusetts Q&A Bot** is a Retrieval-Augmented Generation (RA
 - **Concise Answers**: GPT-3.5-turbo generates precise responses to user queries.
 - **Interactive Frontend**: Streamlit provides an accessible interface for user interaction.
 
+## Advantages of the RAG-Based Q&A Bot Over ChatGPT
+
+1. **Custom Knowledge Base**
+   - The bot uses Wikipedia as its source, ensuring tailored and up-to-date answers.
+   - Unlike ChatGPT, which relies on static training data, this bot's knowledge base can be updated anytime.
+
+2. **Traceable and Verifiable Responses**
+   - Each answer is backed by specific documents or sections from the knowledge base, making it easy to verify.
+   - ChatGPT does not provide citations or traceable sources for its responses.
+
+3. **Cost Efficiency**
+   - By retrieving only relevant chunks of information using a vector store (FAISS), the bot reduces token usage with GPT-3.5-turbo.
+   - This optimization lowers API costs compared to directly querying ChatGPT.
+
+4. **Reduced Hallucinations**
+   - The RAG bot minimizes inaccuracies by generating responses strictly based on retrieved, factual data.
+   - ChatGPT may hallucinate and produce plausible but incorrect information when it lacks sufficient context.
+
+5. **Domain-Specific Expertise**
+   - The bot specializes in specific topics (e.g., Massachusetts history) by curating its knowledge base.
+   - ChatGPT provides general knowledge, which might lack precision in niche domains.
+
+The RAG-based Q&A Bot is more **accurate**, **cost-effective**, and **reliable** for domain-specific applications compared to directly using ChatGPT.
+
 ## File Structure
 
 - **`Wiki_Scraper.py`**: Script for scraping and processing Wikipedia pages. Saves data as CSV and Markdown files. 
