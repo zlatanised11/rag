@@ -10,5 +10,4 @@ faiss-cpu
 qdrant-client
 langchain-openai
 openai
-xformers
 fastembed

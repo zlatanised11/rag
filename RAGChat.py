@@ -1,27 +1,16 @@
 import os
 import pickle
-import streamlit as st
-
-# Core document + text splitting
-from langchain_core.documents import Document  # Corrected from previous session
+from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-# Embeddings & vector storage
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
-
-# LLM and retriever utilities
-# FIX HERE: Moved from langchain.retrievers to langchain_community
-from langchain_community.document_compressors import LLMChainExtractor
-from langchain_community.retrievers import ContextualCompressionRetriever
-
-# OpenAI LLM + prompts
+from langchain_classic.retrievers import ContextualCompressionRetriever
+from langchain_classic.retrievers.document_compressors import LLMChainExtractor
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
-
-# Chain utilities
-from langchain.chains import create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains import create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+from langchain_community.vectorstores import FAISS
+import streamlit as st
 
 
 
