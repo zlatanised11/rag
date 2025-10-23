@@ -3,7 +3,7 @@ import pickle
 import streamlit as st
 
 # Core document + text splitting
-from langchain_core.documents import Document
+from langchain_core.documents import Document  # Corrected from previous session
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # Embeddings & vector storage
@@ -11,7 +11,8 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
 # LLM and retriever utilities
-from langchain.retrievers.document_compressors import LLMChainExtractor
+# FIX HERE: Moved from langchain.retrievers to langchain_community
+from langchain_community.document_compressors import LLMChainExtractor
 from langchain_community.retrievers import ContextualCompressionRetriever
 
 # OpenAI LLM + prompts
