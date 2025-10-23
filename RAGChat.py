@@ -1,16 +1,19 @@
 import os
 import pickle
-from langchain.docstore.document import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+import streamlit as st
+
+from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.retrievers import ContextualCompressionRetriever
-from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain_community.vectorstores import FAISS
+from langchain_community.document_compressors import LLMChainExtractor
+from langchain_community.retrievers import ContextualCompressionRetriever
+
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_community.vectorstores import FAISS
-import streamlit as st
+
 
 class RAGChat:
     """
