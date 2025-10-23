@@ -1,4 +1,4 @@
-langchain==0.0.350
+langchain
 langchain-community
 unstructured
 sentence-transformers
